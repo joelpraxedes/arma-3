@@ -1,0 +1,21 @@
+//// OBS IMPORTANTE, o PATH1 você pode colocar qualquer nome desde que respeite o restante do tutorial, substituindo os nomes...
+
+// Começar a gravação - 
+rec = [unitname,180] spawn BIS_fnc_UnitCapture;
+// Colocar a variavel da unidade no "unitname" - Esse comando será colocado no trigger em "On Activation"
+
+// Criar UNIT na missão e colocar esse comando nela
+path1 = compile preprocessfile "path1.sqf" ;
+// Você deve criar o arquivo SQF e nomear para path1.sqf
+
+
+// Este comando será colocado no path1.sqf, onde ele será o responsável por reproduzir tudo que você fez na gravação.
+// Lembrando que você deverá apertar a tecla "ESC" onde ele irá salvar automaticamente os comandos e linhas... Você deverá somente dar Control + V depois do sinal de igualdade no path1
+path1 =;
+[unit1, path1] spawn BIS_fnc_Unitplay;
+
+
+
+// Ultimo comando, para reproduzir você deve colocar no mesmo trigger onde colocou o primeiro comando e substituir por esse para que reproduza o path1.sqf
+rec = [] spawn path1;
+
